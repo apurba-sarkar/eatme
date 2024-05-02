@@ -1,22 +1,32 @@
-import { StyleSheet, Text, View, Image, ScrollView, Button } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  Button,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
-import cow from "../Images/cow.jpeg";
+// import cow from "../Images/cow.jpeg";
+import sign from "../Images/sing.png";
 import { color } from "../global/style";
+import { globalStyles } from "../global/style";
 export default function WelcomeScreen() {
   return (
-    <ScrollView >
-      {/* <View style={styles.flex}> */}
+    <ScrollView>
+      <View style={styles.welcomemain}>
         <Text style={styles.head}>Welcome to Eat Me</Text>
-        <View>
-          <Image style={styles.image} source={cow} />
-        </View>
+        <Image style={styles.image} source={sign} />
         <Text>Find the best food around you at most affordable price</Text>
         <View>
-
-            <Button title="Login"></Button>
-            <Button title="Signout"></Button>
+          <TouchableOpacity style={globalStyles.btnprimary} onPress={()=>alert("clicked")}>
+            <Text>Login</Text>
+            {/* <Button title="name" style={globalStyles.btnprimary}/> */}
+          </TouchableOpacity>
+          {/* <Touchable title="Login" style={globalStyles.btnprimary}></Touchable> */}
         </View>
-      {/* </View> */}
+      </View>
     </ScrollView>
   );
 }
@@ -26,12 +36,21 @@ const styles = StyleSheet.create({
     color: color.primary,
   },
   image: {
-    height: 400,
+    height: 300,
     aspectRatio: 1,
   },
   flex: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  welcomemain: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 200,
+    gap: 30,
+    backgroundColor: "white",
   },
 });
