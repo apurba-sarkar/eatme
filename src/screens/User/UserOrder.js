@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const SellerProfile = () => {
+const UserOrder = () => {
   return (
     <View>
-      <Text>SellerProfile</Text>
+      <Text>UserOrder</Text>
     </View>
   )
 }
 
-export default SellerProfile
+export default UserOrder
 
 const styles = StyleSheet.create({})

@@ -11,7 +11,7 @@ import {
 import React, { useState } from "react";
 import { color, globalStyles } from "../global/style";
 import login from "../Images/login.png";
-import AdminScreen from './SellerScreen';
+import UserHomeScreen from './User/UserHomeScreen';
 export default function LoginScreen({navigation}) {
   const initialData = {
     email: "",
@@ -57,7 +57,7 @@ export default function LoginScreen({navigation}) {
         <TouchableOpacity>
           <Text>signup</Text>
         </TouchableOpacity>
-        <Button title="admin" onPress={()=>navigation.navigate("SellerScreen")}/>
+        <Button title="user" onPress={()=>navigation.navigate("UserHomeScreen")}/>
       </View>
 
   );
