@@ -1,7 +1,7 @@
 export const color = {
   primary: "#D20062",
   secondary: "#C4E4FF",
-  primar2: "#FF407D",
+  primary2: "#FF407D",
   textcolor: "white",
   textcolor2: "#FF3EA5",
 };

@@ -17,6 +17,7 @@ import { BlurView } from "expo-blur";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+import { color } from "../../global/style";
 
 // source
 
@@ -24,26 +25,36 @@ const Tab = createBottomTabNavigator();
 const UserHomeScreen = () => {
   return (
     <Tab.Navigator
-    // screenOptions={{
-    //   tabBarStyle: { position: "absolute" },
-    //   tabBarBackground: () => (
-    //     <BlurView
-    //       tint="light"
-    //       intensity={100}
-    //       style={StyleSheet.absoluteFill}
-    //     />
-    //   ),
-    // }}
+    screenOptions={{
+      tabBarStyle: { position: "absolute" },
+      tabBarBackground: () => (
+        <BlurView
+          tint="light"
+          intensity={100}
+          // style={StyleSheet.absoluteFill}
+        />
+      ),
+      tabBarActiveBackgroundColor:color.primary,
+      tabBarActiveTintColor:"white",
+      tabBarInactiveBackgroundColor:color.secondary,
+      headerStyle:{
+        backgroundColor:color.primary,
+        
+        // color:"red"
+      },
+    headerTintColor:"white"
+
+    }}
     >
       <Tab.Screen
         name="UserProfile"
         component={UserProfile}
         options={{
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color:iconColor, size }) => (
             <MaterialCommunityIcons
               name="face-man-profile"
               size={24}
-              color="black"
+              color={color.primary}
             />
           ),
         }}
@@ -53,8 +64,8 @@ const UserHomeScreen = () => {
         name="UserOrder"
         component={UserOrder}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="fast-food" size={24} color="black" />
+          tabBarIcon: ({color:iconColor, size }) => (
+            <Ionicons name="fast-food" size={24} color={color.primary} />
           ),
         }}
       />
@@ -62,8 +73,8 @@ const UserHomeScreen = () => {
         name="Support"
         component={Support}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="support-agent" size={24} color="black" />
+          tabBarIcon: ({ color:iconColor, size }) => (
+            <MaterialIcons name="support-agent" size={24} color={color.primary} />
           ),
         }}
       />
@@ -71,8 +82,8 @@ const UserHomeScreen = () => {
         name="More"
         component={More}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="read-more" size={24} color="black" />
+          tabBarIcon: ({ color:iconColor, size }) => (
+            <MaterialIcons name="read-more" size={24} color={color.primary}  />
           ),
         }}
       />
