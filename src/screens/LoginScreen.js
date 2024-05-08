@@ -11,8 +11,10 @@ import {
 import React, { useState } from "react";
 import { color, globalStyles } from "../global/style";
 import login from "../Images/login.png";
-import UserHomeScreen from './User/UserHomeScreen';
-export default function LoginScreen({navigation}) {
+import SignupScreen from "./SignupScreen";
+import ResturantScreen from "./ResturantScreen";
+
+export default function LoginScreen({ navigation }) {
   const initialData = {
     email: "",
     password: "",
@@ -29,37 +31,46 @@ export default function LoginScreen({navigation}) {
   };
 
   return (
-   
-      <View style={[globalStyles.container, { gap: 10 }]}>
-        <Image source={login} style={{ height: 250, aspectRatio: 1 }} />
-        <Text style={globalStyles.h2}>Login In</Text>
+    <View style={[globalStyles.container, { gap: 10 }]}>
+      <Image source={login} style={{ height: 250, aspectRatio: 1 }} />
+      <Text style={globalStyles.h2}>Login In</Text>
 
-        <KeyboardAvoidingView style={globalStyles.formInput}>
-          <TextInput
-            placeholder="Email"
-            onChangeText={(text) => handleChange("email", text)}
-            value={loginData.email}
-            style={{ color: color.textcolor }}
-          />
-        </KeyboardAvoidingView>
-        <View style={globalStyles.formInput}>
-          <TextInput
-            placeholder="Password"
-            onChangeText={(text) => handleChange("password", text)}
-            value={loginData.password}
-            // style={{ color: color.textcolor2 }}
-          />
-        </View>
-       
-        <TouchableOpacity onPress={handleSubmit}>
-          <Text style={globalStyles.btnprimary}>Login</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text>signup</Text>
-        </TouchableOpacity>
-        <Button title="user" onPress={()=>navigation.navigate("UserHomeScreen")}/>
+      <KeyboardAvoidingView style={globalStyles.formInput}>
+        <TextInput
+          placeholder="Email"
+          onChangeText={(text) => handleChange("email", text)}
+          value={loginData.email}
+          style={{ color: color.textcolor }}
+        />
+      </KeyboardAvoidingView>
+      <View style={globalStyles.formInput}>
+        <TextInput
+          placeholder="Password"
+          onChangeText={(text) => handleChange("password", text)}
+          value={loginData.password}
+          // style={{ color: color.textcolor2 }}
+        />
       </View>
 
+      <TouchableOpacity onPress={handleSubmit}>
+        <Text style={globalStyles.btnprimary}>Login</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("SignupScreen")}>
+        <Text>signup</Text>
+      </TouchableOpacity>
+      <Button
+        title="user"
+        onPress={() => navigation.navigate("UserHomeScreen")}
+      />
+      <Button
+        title="res"
+        onPress={() =>
+          navigation.navigate("ResturantScreen" )
+        }
+      />
+      {/* <Button title="home" onPress={()=>navigation.navigate("")}/> */}
+      {/* <Button title="home" onPress={()=>navigation.navigate("HomeScreen")}/> */}
+    </View>
   );
 }
 
