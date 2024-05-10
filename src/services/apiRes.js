@@ -10,5 +10,4 @@ export async function getMenu() {
   } catch (error) {
     console.log(error);
   }
-  return;
 }
