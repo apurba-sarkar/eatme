@@ -63,4 +63,9 @@ export const globalStyles = StyleSheet.create({
     // backgroundColor:"green"
   },
   // Add more global styles here
+  center:{
+    flex:1,
+    alignItems:"center",
+    justifyContent:"center"
+  }
 });
